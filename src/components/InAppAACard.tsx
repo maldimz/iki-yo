@@ -16,7 +16,7 @@ import {
   useReadContract,
 } from "thirdweb/react";
 import { client } from "@/app/client";
-import { mantaPacificTestnet } from "thirdweb/chains";
+import { sepolia } from "thirdweb/chains";
 import {
   getContract,
   prepareContractCall,
@@ -37,13 +37,13 @@ export function InAppAACard() {
 
   const smartAccount = getContract({
     client: client,
-    chain: mantaPacificTestnet,
+    chain: sepolia,
     address: account?.address as string,
   });
 
   const contract = getContract({
     client: client,
-    chain: mantaPacificTestnet,
+    chain: sepolia,
     address: contractAddress,
     abi: contractABI,
   });
@@ -168,7 +168,7 @@ export function InAppAACard() {
             client={client}
             theme={lightTheme()}
             accountAbstraction={{
-              chain: mantaPacificTestnet,
+              chain: sepolia,
               sponsorGas: true,
             }}
             wallets={[inAppWallet()]}
